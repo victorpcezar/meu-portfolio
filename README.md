@@ -35,5 +35,3 @@ src/
 public/         favicon e currículo em PDF
 ```
 
-Para adicionar um projeto, edite a lista em `src/pages/Projects/index.jsx`.
-Para ajustar as cores dos temas, edite `src/theme/themes.js`.
