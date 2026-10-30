@@ -1,23 +1,27 @@
 import Header from './components/NavBar/index'
 import Hero from './pages/Hero/index'
 import About from './pages/About/index'
-import StacksSetion from './pages/StacksSetion/index'
-import Experience from './pages/ProfessinalExp'
+import StacksSection from './pages/StacksSection/index'
+import Projects from './pages/Projects/index'
+import Experience from './pages/ProfessionalExp'
 import Education from './pages/Education/index'
 import Footer from './components/Footer'
-import { GlobalStyles } from "./styles/GlobalStyles"
+import { GlobalStyles } from './styles/GlobalStyles'
 
 function App() {
   return (
     <>
-      <Header />
-      <Hero />
-      <About />
-      <StacksSetion />
-      <Experience />
-      <Education />
-      <Footer />
       <GlobalStyles />
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <StacksSection />
+        <Projects />
+        <Experience />
+        <Education />
+      </main>
+      <Footer />
     </>
   )
 }

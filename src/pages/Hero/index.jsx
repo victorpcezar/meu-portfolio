@@ -1,89 +1,70 @@
-import { motion } from 'framer-motion';
-import me from '../../assets/eu.jpeg';
-import { Section, Profile, Content } from './styles';
-import SocialLinks from '../../components/SocialLink/index';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { motion, useReducedMotion } from 'framer-motion'
+import { FaDownload, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
+import SocialLinks from '../../components/SocialLink/index'
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, RESUME_URL } from '../../data/profile'
+import { Section, Content, Cursor, Actions, Download } from './styles'
 
-// Configuração da animação do container do título
+// Animação de digitação: cada letra aparece em sequência, sem mexer no layout
 const sentenceVariants = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
-    transition: {
-      delay: 0.2,
-      staggerChildren: 0.05, // Velocidade com que cada letra aparece
-    },
+    transition: { delay: 0.2, staggerChildren: 0.05 },
   },
-};
+}
 
-// Configuração para cada letra individual
 const letterVariants = {
-  hidden: { opacity: 0, display: 'none' },
-  visible: { opacity: 1, display: 'inline' },
-};
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+}
+
+const titleText = 'Olá! Eu sou o Victor Pires :)'
 
 export default function Hero() {
-  const titleText = "Olá! Eu sou o Victor Pires :)";
+  const reduceMotion = useReducedMotion()
 
   return (
-    <Section>
-      {/* Foto de Perfil com animação suave e elegante no hover */}
-      <Profile
-        as={motion.div}
-        whileHover={{ scale: 1.04, y: -4 }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
-      >
-        <img src={me} alt="Victor Pires" />
-      </Profile>
-
+    <Section id="top">
       <Content>
-        {/* Título com animação de digitação */}
         <motion.h1
+          aria-label={titleText}
           variants={sentenceVariants}
           initial="hidden"
           animate="visible"
-          style={{ display: 'inline-block' }}
         >
-          {titleText.split("").map((char, index) => (
-            <motion.span key={`${char}-${index}`} variants={letterVariants}>
-              {char}
-            </motion.span>
-          ))}
-          
-          {/* Cursor a piscar no final do texto */}
-          <motion.span
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ repeat: Infinity, duration: 0.8 }}
-            style={{ 
-              display: 'inline-block', 
-              marginLeft: '4px', 
-              color: '#7B1113', 
-              fontWeight: 'bold' 
-            }}
+          <span aria-hidden="true">
+            {reduceMotion
+              ? titleText
+              : titleText.split('').map((char, index) => (
+                  <motion.span key={`${char}-${index}`} variants={letterVariants}>
+                    {char}
+                  </motion.span>
+                ))}
+          </span>
+
+          <Cursor
+            aria-hidden="true"
+            animate={reduceMotion ? { opacity: 1 } : { opacity: [0, 1, 0] }}
+            transition={{ repeat: Infinity, duration: 1 }}
           >
             |
-          </motion.span>
+          </Cursor>
         </motion.h1>
 
         <p>
-          Desenvolvedor de Software focado em criar aplicações web modernas com
-          React, Node.js e Styled Components.
+          Desenvolvedor de Software com experiência em ABAP e SAP, criando aplicações web com
+          React e JavaScript.
         </p>
+
+        <Actions>
+          <Download href={RESUME_URL} download>
+            <FaDownload aria-hidden="true" /> Baixar currículo
+          </Download>
+          <SocialLinks href={LINKEDIN_URL} icon={<FaLinkedin />} label="/linkedin" />
+          <SocialLinks href={GITHUB_URL} icon={<FaGithub />} label="/github" />
+          <SocialLinks href={`mailto:${EMAIL}`} icon={<FaEnvelope />} label="/e-mail" />
+        </Actions>
       </Content>
-
-      <div style={{ display: 'flex', gap: '16px', marginTop: '16px' }}>
-        <SocialLinks
-          href="https://www.linkedin.com/in/victor-emanuel-pires/"
-          icon={<FaLinkedin />}
-          label="/linkedin"
-        />
-
-        <SocialLinks
-          href="https://github.com/victorpcezar"
-          icon={<FaGithub />}
-          label="/github"
-        />
-      </div>
     </Section>
-  );
+  )
 }

@@ -1,30 +1,19 @@
-import { motion } from 'framer-motion';
-import AboutFoto from '../../assets/aboutfoto.jpeg';
-import { AboutContainer, Content, ImageWrapper } from './styles';
+import { motion } from 'framer-motion'
+import SectionTitle from '../../components/SectionTitle'
+import { AboutContainer, Content } from './styles'
 
-// Variantes de animação
 const contentVariants = {
   hidden: { opacity: 0, x: -30 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: 'easeOut' }
-  }
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, x: 30 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: 'easeOut', delay: 0.2 }
-  }
-};
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+}
 
 export default function About() {
   return (
     <AboutContainer id="sobre">
-      {/* Texto vindo da esquerda */}
       <Content
         as={motion.div}
         variants={contentVariants}
@@ -32,33 +21,26 @@ export default function About() {
         whileInView="visible"
         viewport={{ once: true, margin: '-80px' }}
       >
-        <h2>Sobre mim:</h2>
+        <SectionTitle>Sobre mim:</SectionTitle>
 
         <p>
-          Iniciei minha trajetória no desenvolvimento de software atuando como <span className="highlight">Desenvolvedor ABAP</span> no ecossistema SAP, onde consolidei uma base sólida em lógica de programação e regras de negócio complexas.
+          Sou <span className="highlight">Desenvolvedor ABAP Júnior</span> com 1 ano de experiência em
+          projetos SAP (AMS), onde desenvolvi relatórios ALV, programas Z e Function Modules, além de
+          fazer debug e análise de dumps.
         </p>
 
         <p>
-          Hoje, estou direcionando e expandindo minha carreira para o ecossistema <span className="highlight">Full Stack JavaScript</span> (React, Node.js, Express e MongoDB), criando aplicações modernas, dinâmicas e de alto desempenho do zero ao deploy.
+          Hoje estou ampliando minha base para o <span className="highlight">desenvolvimento web e
+          SAP Fiori</span>: React e JavaScript em projetos próprios, e CDS Views, OData e SAPUI5 em
+          estudo. Também reforço os fundamentos de computação com o CS50 de Harvard.
         </p>
 
         <p>
-          Unindo a disciplina e a visão corporativa da minha bagagem em ABAP com a agilidade do desenvolvimento web moderno, busco sempre entregar <span className="highlight">soluções de software funcionais</span>, com código limpo e foco nas necessidades reais do produto.
+          Busco uma vaga como <span className="highlight">Desenvolvedor de Software</span>, unindo a
+          disciplina com regras de negócio que aprendi no SAP à agilidade do desenvolvimento web
+          moderno.
         </p>
       </Content>
-
-      {/* Imagem vindo da direita + Hover interativo via Motion */}
-      <ImageWrapper
-        as={motion.div}
-        variants={imageVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-80px' }}
-        whileHover={{ scale: 1.04, y: -4 }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
-      >
-        <img src={AboutFoto} alt="Victor Pires" />
-      </ImageWrapper>
     </AboutContainer>
-  );
+  )
 }

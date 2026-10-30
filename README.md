@@ -1,17 +1,39 @@
-# React + Vite
+# Portfólio — Victor Emanuel Pires Cezar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site pessoal com apresentação, stacks, projetos, experiência e formação.
 
-Currently, two official plugins are available:
+**Site no ar:** https://meu-portfolio-ruddy-seven.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Recursos
 
-## React Compiler
+- Tema claro e escuro: segue o tema do sistema na primeira visita e guarda a escolha do botão da barra de navegação
+- Layout responsivo e navegação por seções
+- Animações com respeito à preferência "reduzir movimento"
+- Botão para baixar o currículo em PDF
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias
 
-## Expanding the ESLint configuration
+React 19, Vite, Styled Components, Framer Motion e React Icons.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# meu-portifolio
+## Como rodar
+
+```bash
+npm install
+npm run dev
+```
+
+Outros comandos: `npm run build` (gera a versão de produção) e `npm run lint`.
+
+## Estrutura
+
+```
+src/
+  components/   NavBar, Card, Footer, SocialLink, SectionTitle
+  pages/        Hero, About, StacksSection, Projects, ProfessionalExp, Education
+  theme/        temas claro/escuro e provider
+  data/         links e dados compartilhados
+public/         favicon e currículo em PDF
+```
+
+Para adicionar um projeto, edite a lista em `src/pages/Projects/index.jsx`.
+Para ajustar as cores dos temas, edite `src/theme/themes.js`.

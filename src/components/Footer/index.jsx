@@ -1,8 +1,9 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { FooterContainer, Content, Brand, SocialLinks } from './styles';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '../../data/profile'
+import { FooterContainer, Content, Brand, SocialLinks } from './styles'
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   return (
     <FooterContainer>
@@ -17,30 +18,17 @@ export default function Footer() {
         </Brand>
 
         <SocialLinks>
-          <a 
-            href="https://github.com/victorpcezar" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="GitHub"
-          >
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
           </a>
-          <a 
-            href="https://www.linkedin.com/in/victor-emanuel-pires/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="LinkedIn"
-          >
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
-          <a 
-            href="mailto:victorpires1011@hotmail.com" 
-            aria-label="E-mail"
-          >
+          <a href={`mailto:${EMAIL}`} aria-label="E-mail">
             <FaEnvelope />
           </a>
         </SocialLinks>
       </Content>
     </FooterContainer>
-  );
+  )
 }

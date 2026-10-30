@@ -1,12 +1,13 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  border-top: 1px solid ${({ theme }) => theme.colors?.border || '#eaeaea'};
-  background-color: #ffffff;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+  background-color: ${({ theme }) => theme.colors.surface};
   padding: 40px 24px;
   margin-top: 60px;
-`;
+  transition: background-color 0.25s ease;
+`
 
 export const Content = styled.div`
   max-width: 1100px;
@@ -21,7 +22,7 @@ export const Content = styled.div`
     flex-direction: column;
     text-align: center;
   }
-`;
+`
 
 export const Brand = styled.div`
   display: flex;
@@ -29,22 +30,22 @@ export const Brand = styled.div`
   gap: 4px;
 
   p {
-    font-family: ${({ theme }) => theme.fonts?.code || "'Fira Code', monospace"};
+    font-family: ${({ theme }) => theme.fonts.code};
     font-size: 0.9rem;
     font-weight: 600;
-    color: #111111;
+    color: ${({ theme }) => theme.colors.textPrimary};
 
     span {
-      color: ${({ theme }) => theme.colors?.primary || '#7B1113'};
+      color: ${({ theme }) => theme.colors.primary};
     }
   }
 
   span.copyright {
-    font-family: ${({ theme }) => theme.fonts?.code || "'Fira Code', monospace"};
+    font-family: ${({ theme }) => theme.fonts.code};
     font-size: 0.75rem;
-    color: #888888;
+    color: ${({ theme }) => theme.colors.textMuted};
   }
-`;
+`
 
 export const SocialLinks = styled.div`
   display: flex;
@@ -53,15 +54,15 @@ export const SocialLinks = styled.div`
 
   a {
     font-size: 1.25rem;
-    color: #555555;
-    transition: all 0.2s ease;
+    color: ${({ theme }) => theme.colors.textSecondary};
+    transition: color 0.2s ease, transform 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:hover {
-      color: ${({ theme }) => theme.colors?.primary || '#7B1113'};
+      color: ${({ theme }) => theme.colors.primary};
       transform: translateY(-2px);
     }
   }
-`;
+`
