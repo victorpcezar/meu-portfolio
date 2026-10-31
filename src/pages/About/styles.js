@@ -6,10 +6,6 @@ export const AboutContainer = styled.section`
   margin: 0 auto;
   padding: 80px 24px;
   display: flex;
-
-  @media (max-width: 768px) {
-    text-align: center;
-  }
 `
 
 export const Content = styled.div`
