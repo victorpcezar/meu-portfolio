@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { FaReact, FaNodeJs, FaJs, FaGitAlt, FaDatabase, FaCode, FaHtml5 } from 'react-icons/fa'
-import { SiExpress, SiMongodb, SiSap, SiStyledcomponents, SiVuedotjs, SiNextdotjs  } from 'react-icons/si'
+import { SiExpress, SiMongodb, SiSap, SiStyledcomponents, SiVuedotjs, SiNextdotjs, SiTypescript  } from 'react-icons/si'
 
 import Card from '../../components/Card'
 import SectionTitle from '../../components/SectionTitle'
@@ -21,6 +21,7 @@ const stacksData = [
   { name: 'Express', category: 'Back-end · em estudo', icon: SiExpress },
   { name: 'MongoDB', category: 'Banco de dados · em estudo', icon: SiMongodb },
   { name: 'Next.js', category: 'Front-end · em estudo', icon: SiNextdotjs },
+  { name: 'TypeScript', category: 'Linguagem · em estudo', icon: SiTypescript },
 ]
 
 const gridContainerVariants = {
