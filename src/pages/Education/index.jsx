@@ -1,27 +1,8 @@
-import { FaCertificate, FaGraduationCap } from 'react-icons/fa'
+import { educationData } from '../../data/educationData'
 import SectionTitle from '../../components/SectionTitle'
 import { Container, Grid, Card, CardHeader, StatusTag, Description } from './styles'
 
-const educationData = [
-  {
-    id: 1,
-    title: 'Análise e Desenvolvimento de Sistemas',
-    institution: 'UNICIVE - Centro Universitário Cidade Verde',
-    period: 'Graduação concluída em 2024',
-    icon: FaGraduationCap,
-    description:
-      'Foco em engenharia de software, arquitetura de sistemas, modelagem de dados e fundamentos de Tecnologia da Informação.',
-  },
-  {
-    id: 2,
-    title: 'CS50 – Introduction to Computer Science',
-    institution: 'Harvard University',
-    period: 'Certificado em emissão',
-    icon: FaCertificate,
-    description:
-      'Fundamentos de ciência da computação: algoritmos, estruturas de dados e programação.',
-  },
-]
+
 
 export default function Education() {
   return (

@@ -36,10 +36,10 @@ export default function Hero() {
             {reduceMotion
               ? titleText
               : titleText.split('').map((char, index) => (
-                  <motion.span key={`${char}-${index}`} variants={letterVariants}>
-                    {char}
-                  </motion.span>
-                ))}
+                <motion.span key={`${char}-${index}`} variants={letterVariants}>
+                  {char}
+                </motion.span>
+              ))}
           </span>
 
           <Cursor
@@ -52,8 +52,7 @@ export default function Hero() {
         </motion.h1>
 
         <p>
-          Desenvolvedor de Software com experiência em ABAP e SAP, criando aplicações web com
-          React e JavaScript.
+          Desenvolvedor de Software com experiência em SAP ABAP
         </p>
 
         <Actions>

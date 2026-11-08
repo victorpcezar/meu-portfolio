@@ -2,33 +2,11 @@ import { motion, MotionConfig } from 'framer-motion'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 import SocialLinks from '../../components/SocialLink/index'
 import SectionTitle from '../../components/SectionTitle'
-import { GITHUB_URL, REPOSITORIES_URL } from '../../data/profile'
+import { REPOSITORIES_URL } from '../../data/profile'
+import { projects } from '../../data/projectsData'
 import { Container, Grid, ProjectCard, Top, Status, Tags, Links, MoreLink } from './styles'
 
 const repoUrl = (id) => REPOSITORIES_URL.find((repo) => repo.id === id)?.url
-
-// Adicione novos projetos aqui. Use "demo" só se existir um site no ar.
-const projects = [
-  {
-    id: 'portfolio',
-    title: 'Portfólio pessoal',
-    status: 'No ar',
-    description:
-      'Este site: apresentação, stacks, projetos, experiência e formação, com tema claro e escuro, animações e layout responsivo.',
-    tech: ['React', 'Vite', 'Styled Components', 'Framer Motion'],
-    demo: 'https://meu-portfolio-ruddy-seven.vercel.app',
-    code: `${GITHUB_URL}/meu-portfolio`,
-  },
-  {
-    id: 'abap-inventory',
-    title: 'Inventário de Objetos Customizados SAP (ABAP ALV)',
-    status: 'Concluído',
-    description:
-      'Relatório executável em SAP ABAP para inventário, governança e auditoria de desenvolvimentos customizados (Z* e Y*) no repositório do SAP (TADIR).',
-    tech: ['ABAP', 'ALV', 'TADIR'],
-    code: repoUrl(2),
-  },
-]
 
 // Título aparece primeiro
 const titleVariants = {

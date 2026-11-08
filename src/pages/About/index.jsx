@@ -24,21 +24,18 @@ export default function About() {
         <SectionTitle>Sobre mim:</SectionTitle>
 
         <p>
-          Sou <span className="highlight">Desenvolvedor ABAP Júnior</span> com 1 ano de experiência em
-          projetos SAP (AMS), onde desenvolvi relatórios ALV, programas Z e Function Modules, além de
-          fazer debug e análise de dumps.
+          Sou <span className="highlight">desenvolvedor ABAP júnior formado em análise e desenvolvimento de sistemas</span> com 1 ano de experiência em
+          projetos SAP (AMS), onde desenvolvi relatórios ALV, atuei na correção de bugs em programas Z já existentes, análise de dump e debug.
         </p>
 
         <p>
-          Hoje estou ampliando minha base para o <span className="highlight">desenvolvimento web e
-          SAP Fiori</span>: React e JavaScript em projetos próprios, e CDS Views, OData e SAPUI5 em
-          estudo. Também reforço os fundamentos de computação com o CS50 de Harvard.
+          Hoje estou ampliando minha base para o <span className="highlight">desenvolvimento fullstack
+          </span>: <span className="highlight">JavaScript & TypeScript & React & Nextjs</span>. no frontend e <span className="highlight">Node & Express </span> no backend. Também reforço os fundamentos de computação com o CS50 de Harvard.
         </p>
 
         <p>
-          Busco uma vaga como <span className="highlight">Desenvolvedor de Software</span>, unindo a
-          disciplina com regras de negócio que aprendi no SAP à agilidade do desenvolvimento web
-          moderno.
+          Busco uma vaga como <span className="highlight">Desenvolvedor fullstack</span>, unindo a
+          disciplina com regras de negócio que aprendi no SAP à agilidade do desenvolvimento moderno.
         </p>
       </Content>
     </AboutContainer>
