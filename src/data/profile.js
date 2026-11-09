@@ -1,7 +1,7 @@
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/victor-emanuel-pires/'
 export const GITHUB_URL = 'https://github.com/victorpcezar'
 export const EMAIL = 'victorpires1011@hotmail.com'
-export const RESUME_URL = '/curriculo-victor-pires.pdf'
+export const RESUME_URL = '/resume.pdf'
 export const REPOSITORIES_URL = [
     {
         id: 1,
