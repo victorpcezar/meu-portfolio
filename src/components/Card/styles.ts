@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CardContainer = styled.div`
-  display: flex;
+  display: inline;
   align-items: center;
   gap: 12px;
   padding: 16px 20px;
