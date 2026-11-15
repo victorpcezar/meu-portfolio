@@ -1,0 +1,15 @@
+export interface Repository {
+  id: number
+  url: string
+}
+
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/victor-emanuel-pires/'
+export const GITHUB_URL = 'https://github.com/victorpcezar'
+export const EMAIL = 'victorpires1011@hotmail.com'
+export const RESUME_URL = '/resume.pdf'
+export const REPOSITORIES_URL: Repository[] = [
+    {
+        id: 1,
+        url: 'https://github.com/victorpcezar?tab=repositories'
+    },
+]

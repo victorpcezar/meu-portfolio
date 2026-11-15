@@ -13,25 +13,36 @@ Site pessoal com apresentação, stacks, projetos, experiência e formação.
 
 ## Tecnologias
 
-React 19, Vite, Styled Components, Framer Motion e React Icons.
+Next.js 16 (App Router), React 19, TypeScript, Styled Components, Framer Motion e React Icons.
 
 ## Como rodar
+
+Requer Node.js 20.19+ ou 22.13+.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Outros comandos: `npm run build` (gera a versão de produção) e `npm run lint`.
+Outros comandos: `npm run build` (gera a versão de produção), `npm run start` (serve essa versão) e `npm run lint`.
 
 ## Estrutura
 
 ```
 src/
+  app/          layout (providers, fonte, metadados) e página inicial
   components/   NavBar, Card, Footer, SocialLink, SectionTitle
-  pages/        Hero, About, StacksSection, Projects, ProfessionalExp, Education
-  theme/        temas claro/escuro e provider
-  data/         links e dados compartilhados
+  sections/     Hero, About, StacksSection, Projects, ProfessionalExp, Education
+  theme/        temas claro/escuro, provider e registry do styled-components
+  styles/       estilos globais
+  data/         links e dados compartilhados (tipados)
+  hooks/        hooks utilitários
+  types/        extensão de tipos do styled-components
 public/         favicon e currículo em PDF
 ```
 
+## Notas da migração (Vite → Next.js)
+
+- A pasta `pages/` virou `sections/`: em projetos Next.js, `src/pages` é reservada ao Pages Router e seria tratada como rotas.
+- Os componentes que usam styled-components ou Framer Motion têm `'use client'`. `layout.tsx` e `page.tsx` continuam sendo Server Components.
+- As cores do tema são variáveis CSS (`--color-*`) trocadas pelo atributo `data-theme` do `<html>`. Os estilos continuam usando `theme.colors.x`; isso evita piscar no tema errado e erros de hidratação no SSR.
