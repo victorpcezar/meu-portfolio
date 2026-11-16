@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { hoverTransition, themeTransition } from '../../animations'
 
@@ -47,7 +48,7 @@ export const Links = styled.ul`
   gap: 22px;
   margin-left: auto;
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     display: none;
   }
 
@@ -82,5 +83,63 @@ export const ThemeToggle = styled.button`
   &:hover {
     border-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.primary};
+  }
+`
+
+// Agrupa os botões da direita (tema e menu)
+export const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`
+
+// Botão hambúrguer: mesmo visual do botão de tema, só aparece no celular
+export const MenuToggle = styled(ThemeToggle)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline-flex;
+  }
+`
+
+// Painel do menu no celular: abre logo abaixo da barra, na largura toda
+export const MobileMenu = styled(motion.div)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 8px 24px 16px;
+    background-color: ${({ theme }) => theme.colors.surface};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+    box-shadow: 0 12px 24px ${({ theme }) => theme.colors.shadow};
+  }
+`
+
+export const MobileLinks = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  li:not(:last-child) {
+    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  }
+
+  a {
+    display: block;
+    padding: 14px 4px;
+    font-family: ${({ theme }) => theme.fonts.code};
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: ${({ theme }) => theme.colors.textSecondary};
+    text-decoration: none;
+    transition: ${hoverTransition('color')};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.primary};
+    }
   }
 `

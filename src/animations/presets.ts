@@ -1,11 +1,12 @@
 import type { MotionProps } from 'framer-motion'
 import { VIEWPORT } from './tokens'
-import { fadeLeft, fadeUp, staggerContainer } from './variants'
+import { fadeDown, fadeLeft, fadeUp, staggerContainer } from './variants'
 
 // Só as props que os presets realmente usam. Tipar como MotionProps inteiro conflita com os atributos HTML
 // (style, onDrag...) quando o preset é espalhado em um styled-component com `as={motion.div}`.
 type RevealProps = Pick<MotionProps, 'variants' | 'initial' | 'whileInView' | 'viewport'>
 type HoverProps = Pick<MotionProps, 'whileHover' | 'transition'>
+type PresenceProps = Pick<MotionProps, 'variants' | 'initial' | 'animate' | 'exit'>
 
 /*
  * Presets prontos para espalhar (`{...preset}`) em qualquer componente `motion`.
@@ -15,6 +16,7 @@ type HoverProps = Pick<MotionProps, 'whileHover' | 'transition'>
  *  - Título ou bloco de texto ............................... scrollRevealLeft
  *  - Grade/lista de cards .................................. staggerReveal no container + variants={staggerItem} em cada item
  *  - Ícone interativo ...................................... hoverPop
+ *  - Menu/painel que abre e fecha (dentro de AnimatePresence) .. dropdownReveal
  */
 
 // Sobe e aparece quando entra na tela
@@ -48,4 +50,12 @@ export const staggerItem = fadeUp
 export const hoverPop: HoverProps = {
   whileHover: { scale: 1.2, rotate: 10 },
   transition: { type: 'spring', stiffness: 300 },
+}
+
+// Painel que desce ao abrir e some ao fechar. Use dentro de <AnimatePresence>.
+export const dropdownReveal: PresenceProps = {
+  variants: fadeDown,
+  initial: 'hidden',
+  animate: 'visible',
+  exit: 'hidden',
 }
