@@ -87,7 +87,7 @@ export const roadmap: RoadmapPhaseItem[] = [
         title: 'Express',
         description:
             'Construir APIs REST de verdade: rotas, middlewares, validação, banco de dados e autenticação.',
-        status: 'planejado',
+        status: 'em-andamento',
         icon: SiExpress,
         topics: [
             { id: 'express-rotas', title: 'Rotas e métodos HTTP', status: 'concluido' },
@@ -109,14 +109,17 @@ export const roadmap: RoadmapPhaseItem[] = [
         status: 'planejado',
         icon: FaProjectDiagram,
         topics: [
-            { id: 'arq-camadas', title: 'Separação em camadas (rotas, controllers, services, repositories)', status: 'planejado' },
-            { id: 'arq-solid', title: 'Princípios SOLID', status: 'planejado' },
-            { id: 'arq-di', title: 'Injeção de dependência', status: 'planejado' },
-            { id: 'arq-patterns', title: 'Padrões de projeto essenciais', status: 'planejado' },
-            { id: 'arq-clean', title: 'Clean Architecture e arquitetura hexagonal', status: 'planejado' },
-            { id: 'arq-modularizacao', title: 'Organização de pastas e modularização', status: 'planejado' },
-            { id: 'arq-testes', title: 'Testes por camada', status: 'planejado' },
-            { id: 'arq-docs', title: 'Documentação de API (OpenAPI)', status: 'planejado' },
+            { id: 'arq-intro', title: 'Introdução, fundamentos e visão Arquitetural', status: 'planejado' },
+            { id: 'arq-estilos', title: 'Estilos arquiteturais, como escolher?', status: 'planejado' },
+            { id: 'arq-design', title: 'Design de sistemas escaláveis', status: 'planejado' },
+            { id: 'arq-sec', title: 'Segurança em arquitetura de software', status: 'planejado' },
+            { id: 'arq-CI-CD', title: 'CI/CD e estratégias de deploy', status: 'planejado' },
+            { id: 'arq-observ', title: 'Observabilidade e monitoramento', status: 'planejado' },
+            { id: 'arq-resili', title: 'Resiliência e confiabilidade', status: 'planejado' },
+            { id: 'arq-moder', title: 'Modernização e reengenharia de sistemas Legados', status: 'planejado' },
+            { id: 'arq-evolut', title: 'Arquitetura evolutiva e governança', status: 'planejado' },
+            { id: 'arq-lide', title: 'Liderança técnica e comunicação para Arquitetos', status: 'planejado' },
+
         ],
     },
 ]
