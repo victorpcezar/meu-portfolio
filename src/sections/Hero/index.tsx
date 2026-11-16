@@ -12,14 +12,38 @@ const sentenceVariants: Variants = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
-    transition: { delay: 0.2, staggerChildren: 0.05 },
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.05,
+    },
   },
 }
 
 const letterVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
+  hidden: { display: 'none', opacity: 0 },
+  visible: {
+    display: 'inline',
+    opacity: 1,
+    transition: {
+      duration: 0.01,
+    },
+  },
 }
+
+// 1. Adiciona a variante para o cursor piscar após a digitação
+const cursorVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: [0, 1, 0],
+    transition: {
+      duration: 0.8,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  },
+}
+
+
 
 const titleText = 'Olá! Eu sou o Victor Pires :)'
 
@@ -41,16 +65,16 @@ export default function Hero() {
             {reduceMotion
               ? titleText
               : titleText.split('').map((char, index) => (
-                <motion.span key={`${char}-${index}`} variants={letterVariants}>
-                  {char}
-                </motion.span>
-              ))}
+                  <motion.span key={`${char}-${index}`} variants={letterVariants}>
+                    {char}
+                  </motion.span>
+                ))}
           </span>
 
           <Cursor
             aria-hidden="true"
             animate={reduceMotion ? { opacity: 1 } : { opacity: [0, 1, 0] }}
-            transition={{ repeat: Infinity, duration: 1 }}
+            transition={{ repeat: Infinity, duration: 0.8, ease: 'linear' }}
           >
             |
           </Cursor>
