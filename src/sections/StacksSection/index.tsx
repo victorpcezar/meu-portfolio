@@ -1,6 +1,7 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { staggerReveal } from '../../animations'
 import { stacksData } from '../../data/stacksData'
 
 import Card from '../../components/Card'
@@ -10,26 +11,12 @@ import { Container, Grid } from './styles'
 // Tecnologias com experiência profissional ou projetos próprios vêm primeiro;
 // o que ainda está em estudo fica marcado como tal.
 
-const gridContainerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.08 },
-  },
-}
-
 export default function StacksSection() {
   return (
     <Container id="stacks">
       <SectionTitle>Principais stacks</SectionTitle>
 
-      <Grid
-        as={motion.div}
-        variants={gridContainerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
-      >
+      <Grid as={motion.div} {...staggerReveal}>
         {stacksData.map((stack) => (
           <Card key={stack.name} name={stack.name} category={stack.category} icon={stack.icon} />
         ))}

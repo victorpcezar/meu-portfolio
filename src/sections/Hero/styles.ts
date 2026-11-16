@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { hoverTransition } from '../../animations'
 
 export const Section = styled.section`
   width: 100%;
@@ -65,7 +66,7 @@ export const Download = styled.a`
   text-decoration: none;
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.onPrimary};
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: ${hoverTransition('transform', 'box-shadow')};
 
   &:hover {
     transform: translateY(-2px);

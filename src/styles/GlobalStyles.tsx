@@ -1,6 +1,7 @@
 'use client'
 
 import { createGlobalStyle } from 'styled-components'
+import { themeTransition } from '../animations'
 import { cssVarName, darkColors, lightColors, type ThemeColors } from '../theme/themes'
 
 const toCssVariables = (colors: ThemeColors) =>
@@ -37,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.textPrimary};
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: ${themeTransition('background-color', 'color')};
   }
 
   section[id] {

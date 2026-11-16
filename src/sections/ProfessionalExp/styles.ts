@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { hoverTransition, themeTransition } from '../../animations'
 
 export const Container = styled.section`
   width: 100%;
@@ -41,7 +42,7 @@ export const ItemCard = styled(motion.div)`
   border-radius: 16px;
   padding: 24px 28px;
   box-shadow: 0 4px 20px ${({ theme }) => theme.colors.shadow};
-  transition: border-color 0.3s ease, background-color 0.25s ease;
+  transition: ${hoverTransition('border-color')}, ${themeTransition('background-color')};
 
   &:hover {
     border-color: ${({ theme }) => theme.colors.primary};

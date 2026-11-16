@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { hoverTransition } from '../../animations'
 
 export const SocialMediaLink = styled.a`
   display: inline-flex;
@@ -10,11 +11,11 @@ export const SocialMediaLink = styled.a`
   color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
   white-space: nowrap;
-  transition: color 0.2s ease-in-out;
+  transition: ${hoverTransition('color')};
 
   span {
     font-size: 0.85rem;
-    transition: transform 0.2s ease;
+    transition: ${hoverTransition('transform')};
   }
 
   svg {

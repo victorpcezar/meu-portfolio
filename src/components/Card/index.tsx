@@ -1,18 +1,9 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 import type { IconType } from 'react-icons'
+import { staggerItem } from '../../animations'
 import { CardContainer, Info } from './styles'
-
-// Animação de entrada individual de cada card
-const cardItemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
-  },
-}
 
 interface CardProps {
   name: string
@@ -22,7 +13,7 @@ interface CardProps {
 
 export default function Card({ name, category, icon: Icon }: CardProps) {
   return (
-    <CardContainer as={motion.div} variants={cardItemVariants}>
+    <CardContainer as={motion.div} variants={staggerItem}>
       {Icon && <Icon aria-hidden="true" />}
       <Info>
         <h4>{name}</h4>

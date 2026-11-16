@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import type { ReactNode } from 'react'
+import MotionProvider from '../animations/MotionProvider'
 import { GlobalStyles } from '../styles/GlobalStyles'
 import StyledComponentsRegistry from '../theme/StyledComponentsRegistry'
 import { ThemeProvider } from '../theme/ThemeProvider'
@@ -44,8 +45,10 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <StyledComponentsRegistry>
           <ThemeProvider>
-            <GlobalStyles />
-            {children}
+            <MotionProvider>
+              <GlobalStyles />
+              {children}
+            </MotionProvider>
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>

@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import styled from 'styled-components'
+import { hoverTransition, themeTransition } from '../../animations'
 
 export const NavBar = styled.header`
   position: sticky;
@@ -7,7 +9,7 @@ export const NavBar = styled.header`
   background-color: ${({ theme }) => theme.colors.navBg};
   backdrop-filter: blur(8px);
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  transition: ${themeTransition('background-color', 'border-color')};
 `
 
 export const Inner = styled.nav`
@@ -20,7 +22,7 @@ export const Inner = styled.nav`
   gap: 16px;
 `
 
-export const LogoLink = styled.a`
+export const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
 
@@ -55,7 +57,7 @@ export const Links = styled.ul`
     font-weight: 600;
     color: ${({ theme }) => theme.colors.textSecondary};
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: ${hoverTransition('color')};
 
     &:hover {
       color: ${({ theme }) => theme.colors.primary};
@@ -75,7 +77,7 @@ export const ThemeToggle = styled.button`
   color: ${({ theme }) => theme.colors.textPrimary};
   font-size: 1rem;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.25s ease;
+  transition: ${hoverTransition('border-color', 'color')}, ${themeTransition('background-color')};
 
   &:hover {
     border-color: ${({ theme }) => theme.colors.primary};

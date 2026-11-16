@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { hoverTransition, themeTransition } from '../../animations'
 
 export const CardContainer = styled.div`
   display: inline;
@@ -9,7 +10,7 @@ export const CardContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 12px;
   box-shadow: 0 2px 8px ${({ theme }) => theme.colors.shadow};
-  transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.25s ease;
+  transition: ${hoverTransition('transform', 'border-color')}, ${themeTransition('background-color')};
 
   svg {
     font-size: 1.8rem;

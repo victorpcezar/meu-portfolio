@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { hoverTransition, themeTransition } from '../../animations'
 
 export const FooterContainer = styled.footer`
   width: 100%;
@@ -6,7 +7,7 @@ export const FooterContainer = styled.footer`
   background-color: ${({ theme }) => theme.colors.surface};
   padding: 40px 24px;
   margin-top: 60px;
-  transition: background-color 0.25s ease;
+  transition: ${themeTransition('background-color')};
 `
 
 export const Content = styled.div`
@@ -55,7 +56,7 @@ export const SocialLinks = styled.div`
   a {
     font-size: 1.25rem;
     color: ${({ theme }) => theme.colors.textSecondary};
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: ${hoverTransition('color', 'transform')};
     display: flex;
     align-items: center;
     justify-content: center;

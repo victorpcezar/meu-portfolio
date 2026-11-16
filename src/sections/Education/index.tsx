@@ -1,5 +1,7 @@
 'use client'
 
+import { motion } from 'framer-motion'
+import { staggerItem, staggerReveal } from '../../animations'
 import { educationData } from '../../data/educationData'
 import SectionTitle from '../../components/SectionTitle'
 import { Container, Grid, Card, CardHeader, StatusTag, Description } from './styles'
@@ -9,17 +11,11 @@ export default function Education() {
     <Container id="formacao">
       <SectionTitle>Formação e cursos</SectionTitle>
 
-      <Grid>
-        {educationData.map((item, index) => {
+      <Grid as={motion.div} {...staggerReveal}>
+        {educationData.map((item) => {
           const Icon = item.icon
           return (
-            <Card
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: index * 0.15 }}
-            >
+            <Card key={item.id} variants={staggerItem}>
               <CardHeader>
                 <div className="icon">
                   <Icon aria-hidden="true" />

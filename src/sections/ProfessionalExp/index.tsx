@@ -1,5 +1,6 @@
 'use client'
 
+import { hoverPop, scrollReveal } from '../../animations'
 import SectionTitle from '../../components/SectionTitle'
 import { Container, Timeline, ItemCard, IconBadge, Header, DescriptionList } from './styles'
 import { experiences } from '../../data/experiencesData'
@@ -10,17 +11,11 @@ export default function Experience() {
       <SectionTitle>Minha experiência</SectionTitle>
 
       <Timeline>
-        {experiences.map((exp, index) => {
+        {experiences.map((exp) => {
           const Icon = exp.icon
           return (
-            <ItemCard
-              key={exp.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <IconBadge whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <ItemCard key={exp.id} {...scrollReveal}>
+              <IconBadge {...hoverPop}>
                 <Icon aria-hidden="true" />
               </IconBadge>
 

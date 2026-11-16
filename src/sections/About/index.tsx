@@ -1,28 +1,14 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { scrollRevealLeft } from '../../animations'
 import SectionTitle from '../../components/SectionTitle'
 import { AboutContainer, Content } from './styles'
-
-const contentVariants: Variants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
-  },
-}
 
 export default function About() {
   return (
     <AboutContainer id="sobre">
-      <Content
-        as={motion.div}
-        variants={contentVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-80px' }}
-      >
+      <Content as={motion.div} {...scrollRevealLeft}>
         <SectionTitle>Sobre mim:</SectionTitle>
 
         <p>
