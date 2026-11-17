@@ -29,7 +29,7 @@ export const experiences: ExperienceItem[] = [
         id: 2,
         role: 'Conferente de Cargas',
         company: '@ LDB Transportes',
-        period: 'dez/2025 – atual',
+        period: 'dez/2025 – dez/2026',
         icon: FaBriefcase,
         descriptions: [
             'Conferência de entrada e saída: valida quantidades, códigos, lotes e datas de validade dos produtos.',
