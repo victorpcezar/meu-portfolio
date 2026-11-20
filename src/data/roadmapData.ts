@@ -64,7 +64,7 @@ export const roadmap: RoadmapPhaseItem[] = [
             { id: 'ts-10', title: 'Union types', status: 'concluido' },
             { id: 'ts-11', title: 'Tipagem de funções', status: 'concluido' },
             { id: 'ts-12', title: 'Classes com TypeScript', status: 'concluido' },
-            { id: 'ts-13', title: 'Overload', status: 'planejado' },
+            { id: 'ts-13', title: 'Overload', status: 'concluido' },
             { id: 'ts-14', title: 'Type guard', status: 'planejado' },
             { id: 'ts-15', title: 'Narrowing (Refinamento de tipos)', status: 'planejado' },
             { id: 'ts-16', title: 'Tipos genéricos', status: 'planejado' },
